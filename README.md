@@ -12,6 +12,8 @@ This is a framework for single page business applications. It's not complete. It
 *	Displaying messages (e.g. dialogs/modals, toasts, snackbar, ...)
 *	Browser/Table
 
+You have to implement your own code for these interfaces. I will provide simple example applications later.
+
 The framework enforces a MVVM-Pattern.
 
 The model is completely separated and interchangeable. A PHP template is included within this package. But other programming language can be used and examples will be provided later.
