@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="assets/css/material-components-web.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+  </head>
+  <body class="mdc-typography">
+    <div class="toolbar mdc-theme--primary-bg mdc-theme--text-primary-on-primary mdc-typography--title mdc-elevation--z4">
+      <button class="btn-menu material-icons" style="display:none">menu</button>
+      <span id="toolbar_title"></span>
+    </div>
+
+    <aside class="mdc-temporary-drawer">
+      <nav class="mdc-temporary-drawer__drawer">
+        <header class="mdc-temporary-drawer__header">
+          <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+            Header
+          </div>
+        </header>
+        <nav class="mdc-temporary-drawer__content mdc-list-group">
+          <div class="mdc-list">
+            <a class="mdc-list-item mdc-temporary-drawer--selected" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">inbox</i>Inbox
+            </a>
+          </div>
+
+          <hr class="mdc-list-divider">
+
+          <div class="mdc-list">
+            <a class="mdc-list-item" href="#">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">email</i>All Mail
+            </a>
+          </div>
+        </nav>
+      </nav>
+    </aside>
+    <main>
+
+      
+    </main>
+
+    <script src="assets/js/material-components-web.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="assets/js/cryptojs.min.js"></script>
+    <script src="assets/js/zs.js"></script>
+    <script>
+      mdc.autoInit();
+      $(function ready() {
+         let drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
+         document.querySelector('.btn-menu').addEventListener('click', () => drawer.open = true);
+      });
+
+      zs.content.loadLabels({labels: ['application title']}, function done() { $('title,#toolbar_title').html(zs.i18n.getLabel('application title')); });
+
+      zs.content.loadFragment({controller: 'login',
+                               fragment  : 'login',
+                               success   : function() {
+                                 
+                               }
+                              });
+    </script>
+  </body>
+</html>
